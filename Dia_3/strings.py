@@ -52,3 +52,24 @@ print(encontrar)
 texto_a_remplazar = "Puedes remplazar cualquier parte de este texto de ejemplo"
 texto_a_remplazar_resultado = texto_a_remplazar.replace("e", "i")
 print(texto_a_remplazar_resultado)
+
+
+#Propiedades de los strings
+
+nombre = "Tania"
+# nombre[0] = "D" esto no es posible porque los strings son inmutables
+
+print(nombre * 10)
+
+texto_multilinea = """
+    Este es un texto
+    con varias lineas,
+    esto es posible con 3 comillas dobles
+    al inicio y al final
+"""
+
+print(texto_multilinea)
+
+print("posible" in texto_multilinea)
+print("posible" not in texto_multilinea)
+print(len(nombre))
