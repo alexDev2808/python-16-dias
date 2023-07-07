@@ -15,3 +15,15 @@ data = {
 
 for key, value in data.items():
     print(key, value)
+
+
+#rangos
+
+print("*" * 20)
+
+for num in range(0, 13, 2):
+    print(num)
+
+lista = list(range(1, 101))
+print(lista)
+
