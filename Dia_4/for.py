@@ -27,3 +27,14 @@ for num in range(0, 13, 2):
 lista = list(range(1, 101))
 print(lista)
 
+# enumerate
+
+print("#" * 20)
+
+frutas = ["manzana", "pera", "durazno", "mango", "fresa"]
+
+for indice, fruta in enumerate(frutas):
+    print(f"{indice} -> {fruta}")
+
+list_enum = list(enumerate(frutas))
+print(list_enum)
