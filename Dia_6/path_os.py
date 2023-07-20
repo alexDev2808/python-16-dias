@@ -1,5 +1,5 @@
 import os
-from pathlib import Path
+from pathlib_ import Path
 
 # ruta = os.getcwd() # obtener el directorio actual
 # os.chdir("/home/alexth/PycharmProjects/PythonTotal_16_Dias/extras") #cambiar a otro directorio
