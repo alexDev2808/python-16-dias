@@ -15,7 +15,7 @@ from datetime import datetime, date
 mi_fecha = datetime(2024, 4, 12, 22, 10, 15)
 print(mi_fecha)
 
-mi_fecha = mi_fecha.replace(month= 11)
+mi_fecha = mi_fecha.replace(month=11)
 print(mi_fecha)
 
 nacimiento = date(1995, 2, 4)
@@ -32,3 +32,9 @@ vigilia = duerme - despierta
 print(vigilia)
 print(vigilia.seconds)
 
+
+hoy = date.today()
+print(hoy)
+
+minutos = datetime.now().minute
+print(minutos)
