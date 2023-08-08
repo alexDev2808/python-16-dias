@@ -32,13 +32,15 @@ print("_".join(buscar))
 
 
 def verificar_email(email):
-    if re.search(r'\w+@\w+\.com$|\.com\...$', email):
+    # if re.search(r'\w+@\w+\.com$|\.com\...$', email):
+    if re.search(r'@\w+\.com', email):
+
         return "Ok"
     else:
         return "La dirección de email es incorrecta"
 
 
-print(verificar_email("usuario@host.com.br"))
+print(verificar_email("usuario@host.com"))
 
 
 def verificar_saludo(frase):
