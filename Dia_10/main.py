@@ -16,6 +16,7 @@ pygame.display.set_icon(icono)
 img_jugador = pygame.image.load("rocket.png")
 jugador_x = 368
 jugador_y = 536
+jugador_x_cambio = 0
 
 
 def jugador(x, y):
@@ -28,12 +29,22 @@ se_ejecuta = True
 while se_ejecuta:
     # rgb
     pantalla.fill((205, 144, 228))
-    jugador_x += 0.1
 
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             se_ejecuta = False
 
+        if evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_LEFT:
+                jugador_x_cambio -= 0.4
+            if evento.key == pygame.K_RIGHT:
+                jugador_x_cambio += 0.4
+
+        if evento.type == pygame.KEYUP:
+            if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
+                jugador_x_cambio = 0
+
+    jugador_x += jugador_x_cambio
     jugador(jugador_x, jugador_y)
 
     pygame.display.update()
