@@ -18,20 +18,23 @@ jugador_x = 368
 jugador_y = 536
 
 
-def jugador():
-    pantalla.blit(img_jugador, (jugador_x, jugador_y))
+def jugador(x, y):
+    pantalla.blit(img_jugador, (x, y))
+
+
 # Loop de juego
 se_ejecuta = True
 
 while se_ejecuta:
     # rgb
     pantalla.fill((205, 144, 228))
+    jugador_x += 0.1
 
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             se_ejecuta = False
 
-    jugador()
+    jugador(jugador_x, jugador_y)
 
     pygame.display.update()
 
