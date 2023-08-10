@@ -1,4 +1,5 @@
 import pygame
+import random
 
 # Inicializar a pygame
 pygame.init()
@@ -18,10 +19,21 @@ jugador_x = 368
 jugador_y = 536
 jugador_x_cambio = 0
 
+# Enemigo
+img_enemigo = pygame.image.load("space-ship.png")
+enemigo_x = random.randint(0, 736)
+enemigo_y = random.randint(50, 200)
+enemigo_x_cambio = 0
+
 
 # Funcion del jugador
 def jugador(x, y):
     pantalla.blit(img_jugador, (x, y))
+
+
+# Funcion del enemigo
+def enemigo(x, y):
+    pantalla.blit(img_enemigo, (x, y))
 
 
 # Loop de juego
@@ -60,6 +72,7 @@ while se_ejecuta:
         jugador_x = 736
 
     jugador(jugador_x, jugador_y)
+    enemigo(enemigo_x, enemigo_y)
 
     # actualizar
     pygame.display.update()
