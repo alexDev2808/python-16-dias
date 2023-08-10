@@ -16,14 +16,15 @@ pygame.display.set_icon(icono)
 # Jugador
 img_jugador = pygame.image.load("rocket.png")
 jugador_x = 368
-jugador_y = 536
+jugador_y = 500
 jugador_x_cambio = 0
 
 # Enemigo
 img_enemigo = pygame.image.load("space-ship.png")
 enemigo_x = random.randint(0, 736)
 enemigo_y = random.randint(50, 200)
-enemigo_x_cambio = 0
+enemigo_x_cambio = 0.3
+enemigo_y_cambio = 50
 
 
 # Funcion del jugador
@@ -62,14 +63,26 @@ while se_ejecuta:
             if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
                 jugador_x_cambio = 0
 
-#   Modificar ubicacion
+#   Modificar ubicacion del jugador
     jugador_x += jugador_x_cambio
 
-    # mantener dentro del borde
+    # mantener dentro del borde al jugador
     if jugador_x <= 0:
         jugador_x = 0
     elif jugador_x >= 736:
         jugador_x = 736
+
+    # Modificar ubicacion del enemigo
+    enemigo_x += enemigo_x_cambio
+
+    # mantener dentro del borde al enemigo
+    if enemigo_x <= 0:
+        enemigo_x_cambio = 0.3
+        enemigo_y += enemigo_y_cambio
+    elif enemigo_x >= 736:
+        enemigo_x_cambio = -0.3
+        enemigo_y += enemigo_y_cambio
+
 
     jugador(jugador_x, jugador_y)
     enemigo(enemigo_x, enemigo_y)
