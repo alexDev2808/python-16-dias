@@ -11,6 +11,7 @@ pantalla = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Invasion Espacial")
 icono = pygame.image.load('alien.png')
 pygame.display.set_icon(icono)
+fondo = pygame.image.load("Fondo.jpg")
 
 
 # Jugador
@@ -23,7 +24,7 @@ jugador_x_cambio = 0
 img_enemigo = pygame.image.load("space-ship.png")
 enemigo_x = random.randint(0, 736)
 enemigo_y = random.randint(50, 200)
-enemigo_x_cambio = 0.3
+enemigo_x_cambio = 1
 enemigo_y_cambio = 50
 
 
@@ -42,7 +43,10 @@ se_ejecuta = True
 
 while se_ejecuta:
     # rgb
-    pantalla.fill((205, 144, 228))
+    # pantalla.fill((205, 144, 228))
+
+    # Imagen de fondo
+    pantalla.blit(fondo, (0, 0))
 
 #    Iterar eventos
     for evento in pygame.event.get():
@@ -54,9 +58,9 @@ while se_ejecuta:
         # Evento presionar flechas
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_LEFT:
-                jugador_x_cambio -= 0.4
+                jugador_x_cambio = -1
             if evento.key == pygame.K_RIGHT:
-                jugador_x_cambio += 0.4
+                jugador_x_cambio = 1
 
         # Evento soltar flechas
         if evento.type == pygame.KEYUP:
@@ -77,10 +81,10 @@ while se_ejecuta:
 
     # mantener dentro del borde al enemigo
     if enemigo_x <= 0:
-        enemigo_x_cambio = 0.3
+        enemigo_x_cambio = 1
         enemigo_y += enemigo_y_cambio
     elif enemigo_x >= 736:
-        enemigo_x_cambio = -0.3
+        enemigo_x_cambio = -1
         enemigo_y += enemigo_y_cambio
 
 
