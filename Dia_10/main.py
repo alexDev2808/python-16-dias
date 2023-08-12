@@ -1,6 +1,7 @@
 import math
 import pygame
 import random
+from pygame import mixer
 
 # Inicializar a pygame
 pygame.init()
@@ -14,6 +15,9 @@ icono = pygame.image.load('alien.png')
 pygame.display.set_icon(icono)
 fondo = pygame.image.load("Fondo.jpg")
 
+# Agregar musica
+mixer.music.load('MusicaFondo.mp3')
+mixer.music.play(-1)
 
 # Jugador
 img_jugador = pygame.image.load("rocket.png")
@@ -107,6 +111,8 @@ while se_ejecuta:
             if evento.key == pygame.K_RIGHT:
                 jugador_x_cambio = 1
             if evento.key == pygame.K_SPACE:
+                sonido_bala = mixer.Sound('disparo.mp3')
+                sonido_bala.play()
                 if not bala_visible:
                     bala_x = jugador_x
                     disparar_bala(bala_x, bala_y)
@@ -140,6 +146,8 @@ while se_ejecuta:
         # colision
         colision = hay_colision(enemigo_x[e], enemigo_y[e], bala_x, bala_y)
         if colision:
+            sonido_colision = mixer.Sound('Golpe.mp3')
+            sonido_colision.play()
             bala_y = 500
             bala_visible = False
             puntaje += 1
