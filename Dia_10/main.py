@@ -77,7 +77,9 @@ while se_ejecuta:
             if evento.key == pygame.K_RIGHT:
                 jugador_x_cambio = 1
             if evento.key == pygame.K_SPACE:
-                disparar_bala(jugador_x, bala_y)
+                if not bala_visible:
+                    bala_x = jugador_x
+                    disparar_bala(bala_x, bala_y)
 
         # Evento soltar flechas
         if evento.type == pygame.KEYUP:
@@ -105,8 +107,12 @@ while se_ejecuta:
         enemigo_y += enemigo_y_cambio
 
     # Movimiento bala
+    if bala_y <= -64:
+        bala_y = 500
+        bala_visible = False
+
     if bala_visible:
-        disparar_bala(jugador_x, bala_y)
+        disparar_bala(bala_x, bala_y)
         bala_y -= bala_y_cambio
 
     jugador(jugador_x, jugador_y)
