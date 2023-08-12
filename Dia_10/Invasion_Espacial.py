@@ -2,6 +2,7 @@ import math
 import pygame
 import random
 from pygame import mixer
+from ejecutable import fuente_bytes
 
 # Inicializar a pygame
 pygame.init()
@@ -50,12 +51,13 @@ bala_visible = False
 
 # Puntaje
 puntaje = 0
-fuente = pygame.font.Font('Starborn.ttf', 32)
+fuente_como_bytes = fuente_bytes('Starborn.ttf')
+fuente = pygame.font.Font(fuente_como_bytes, 32)
 texto_x = 10
 texto_y = 10
 
 # Texto final del juego
-fuente_final = pygame.font.Font('Starborn.ttf', 40)
+fuente_final = pygame.font.Font(fuente_como_bytes, 40)
 
 
 def texto_final():
