@@ -1,0 +1,81 @@
+# Bytecode y caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# Pylint y herramientas de análisis
+.pylint.d/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.coverage
+htmlcov/
+
+# pytest
+.pytest_cache/
+.hypothesis/
+
+# ipython
+.ipython/
+.ipykernel/
+
+# Archivos de compilación (PyInstaller)
+*.spec
+*.exe
+*.msi
+*.dll
+*.so
+*.dylib
+
+# Archivos temporales y locales
+*.log
+*.tmp
+*.temp
+*.bak
+.env
+.env.local
+config.local.py
+*.code-workspace
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
