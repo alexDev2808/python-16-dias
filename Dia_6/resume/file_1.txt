@@ -1,0 +1,3 @@
+Python es un lenguaje de programación de alto nivel, versátil y fácil de aprender, diseñado por Guido van Rossum en 1989.
+Se caracteriza por su sintaxis clara y legible, similar al inglés, lo que lo hace ideal para principiantes y profesionales. 
+Es de propósito general, lo que significa que sirve para crear casi cualquier tipo de aplicación.
