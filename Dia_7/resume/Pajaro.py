@@ -38,8 +38,6 @@ class Pajaro:
     def mirar():
         print("El pajaro ha comenzado a mirar!")
 
-    
-
 # metodos de instancia
 pajaro1 = Pajaro("rojo", "cardenal")
 print(pajaro1.volar(10))
@@ -51,10 +49,9 @@ Pajaro.poner_huevos(3)
 Pajaro.contar_alas()
 Pajaro.contar_alas()
 
+# metodos estaticos
 Pajaro.mirar()
 
 
-
-# metodos estaticos
 
 
